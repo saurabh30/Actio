@@ -1,0 +1,17 @@
+D:\MyProjects\Actio\Actio\Actio.Services.Activity\bin\Debug\netcoreapp2.1\Actio.Services.Activity.deps.json
+D:\MyProjects\Actio\Actio\Actio.Services.Activity\bin\Debug\netcoreapp2.1\Actio.Services.Activity.runtimeconfig.json
+D:\MyProjects\Actio\Actio\Actio.Services.Activity\bin\Debug\netcoreapp2.1\Actio.Services.Activity.runtimeconfig.dev.json
+D:\MyProjects\Actio\Actio\Actio.Services.Activity\bin\Debug\netcoreapp2.1\Actio.Services.Activity.dll
+D:\MyProjects\Actio\Actio\Actio.Services.Activity\bin\Debug\netcoreapp2.1\Actio.Services.Activity.pdb
+D:\MyProjects\Actio\Actio\Actio.Services.Activity\bin\Debug\netcoreapp2.1\Actio.Common.dll
+D:\MyProjects\Actio\Actio\Actio.Services.Activity\bin\Debug\netcoreapp2.1\Actio.Common.pdb
+D:\MyProjects\Actio\Actio\Actio.Services.Activity\obj\Debug\netcoreapp2.1\Actio.Services.Activity.csprojAssemblyReference.cache
+D:\MyProjects\Actio\Actio\Actio.Services.Activity\obj\Debug\netcoreapp2.1\Actio.Services.Activity.csproj.CoreCompileInputs.cache
+D:\MyProjects\Actio\Actio\Actio.Services.Activity\obj\Debug\netcoreapp2.1\Actio.Services.Activity.RazorAssemblyInfo.cache
+D:\MyProjects\Actio\Actio\Actio.Services.Activity\obj\Debug\netcoreapp2.1\Actio.Services.Activity.RazorAssemblyInfo.cs
+D:\MyProjects\Actio\Actio\Actio.Services.Activity\obj\Debug\netcoreapp2.1\Actio.Services.Activity.AssemblyInfoInputs.cache
+D:\MyProjects\Actio\Actio\Actio.Services.Activity\obj\Debug\netcoreapp2.1\Actio.Services.Activity.AssemblyInfo.cs
+D:\MyProjects\Actio\Actio\Actio.Services.Activity\obj\Debug\netcoreapp2.1\Actio.Services.Activity.RazorTargetAssemblyInfo.cache
+D:\MyProjects\Actio\Actio\Actio.Services.Activity\obj\Debug\netcoreapp2.1\Actio.Services.Activity.csproj.CopyComplete
+D:\MyProjects\Actio\Actio\Actio.Services.Activity\obj\Debug\netcoreapp2.1\Actio.Services.Activity.dll
+D:\MyProjects\Actio\Actio\Actio.Services.Activity\obj\Debug\netcoreapp2.1\Actio.Services.Activity.pdb
