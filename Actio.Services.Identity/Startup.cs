@@ -10,7 +10,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-
+using Actio.Services.Identity.Domain.Services;
+using Actio.Services.Identity.Services;
+using Actio.Services.Identity.Domain.Repositories;
+using Actio.Common.Mongo;
 namespace Actio.Services.Identity
 {
     public class Startup
@@ -26,6 +29,11 @@ namespace Actio.Services.Identity
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddLogging();
+            services.AddMongoDB(Configuration);
+            services.AddScoped<IEncrypter, Encrypter>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IUserService, UserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,6 +50,10 @@ namespace Actio.Services.Identity
 
             app.UseHttpsRedirection();
             app.UseMvc();
+            using (var serviceScope = app.ApplicationServices.CreateScope())
+            {
+                serviceScope.ServiceProvider.GetService<IDatabaseInitializer>().InitializeAsync();
+            }
         }
     }
 }
