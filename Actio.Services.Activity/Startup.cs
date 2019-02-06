@@ -35,11 +35,11 @@ namespace Actio.Services.Activity
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddRabbitMq(Configuration);
             services.AddMongoDB(Configuration);
-            services.AddTransient<ICommandHandler<CreateActivity>, Handler.CreateActivityHandler>();
-            services.AddScoped<ICategoryRepository, CategoryRepository>();
-            services.AddScoped<IActivityRepository, ActivityRepository>();
+            services.AddSingleton<ICommandHandler<CreateActivity>, Handler.CreateActivityHandler>();
+            services.AddSingleton<ICategoryRepository, CategoryRepository>();
+            services.AddSingleton<IActivityRepository, ActivityRepository>();
             services.AddScoped<IDatabaseSeeder, CustomMongoSeeder>();
-            services.AddScoped<IActivityService, ActivityService>();
+            services.AddSingleton<IActivityService, ActivityService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

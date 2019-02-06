@@ -78,8 +78,8 @@ namespace Actio.Common.Services
 
             public BusBuilder SubscribeToCommand<TCommand>() where TCommand : ICommand
             {
-                var handler = (ICommandHandler<TCommand>)_webHost.Services
-                    .GetService(typeof(ICommandHandler<TCommand>));
+                    var handler = (ICommandHandler<TCommand>)_webHost.Services
+                        .GetService(typeof(ICommandHandler<TCommand>));
                 _bus.WithCommandHandlerAsync(handler);
 
                 return this;

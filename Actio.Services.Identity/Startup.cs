@@ -14,6 +14,10 @@ using Actio.Services.Identity.Domain.Services;
 using Actio.Services.Identity.Services;
 using Actio.Services.Identity.Domain.Repositories;
 using Actio.Common.Mongo;
+using Actio.Services.Identity.Handler;
+using Actio.Common.Commands;
+using Actio.Common.Auth;
+
 namespace Actio.Services.Identity
 {
     public class Startup
@@ -31,9 +35,11 @@ namespace Actio.Services.Identity
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddLogging();
             services.AddMongoDB(Configuration);
-            services.AddScoped<IEncrypter, Encrypter>();
-            services.AddScoped<IUserRepository, UserRepository>();
-            services.AddScoped<IUserService, UserService>();
+            services.AddJwt(Configuration);
+            services.AddSingleton<IEncrypter, Encrypter>();
+            services.AddTransient<ICommandHandler<CreateUser>, CreateUserHandler>();
+            services.AddTransient<IUserRepository, UserRepository>();
+            services.AddSingleton<IUserService, UserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

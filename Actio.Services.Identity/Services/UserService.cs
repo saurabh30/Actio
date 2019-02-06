@@ -1,5 +1,6 @@
 using System;
 using System.Threading.Tasks;
+using Actio.Common.Auth;
 using Actio.Common.Exceptions;
 using Actio.Services.Identity.Domain.Models;
 using Actio.Services.Identity.Domain.Repositories;
@@ -10,6 +11,7 @@ namespace Actio.Services.Identity.Services
     {
          private readonly IUserRepository _repository;
          private readonly IEncrypter _encryptor;
+         private readonly IJwtHandler _jwtHandler;
 
          public UserService(IUserRepository repository,
             IEncrypter encryptor)
@@ -21,7 +23,7 @@ namespace Actio.Services.Identity.Services
          public async Task RegisterAsync(string email, string password, string name)
          {
              var user1 = _repository.GetAsync(email);
-             if(user1 == null)
+             if(user1 != null)
              {
                  throw new ActioException("email_in_use",
                     $"Email: '{email} already in use. ");
@@ -32,7 +34,7 @@ namespace Actio.Services.Identity.Services
          }    
     
         
-         public async Task LoginAsync(string email, string password)
+         public async Task<JsonWebToken> LoginAsync(string email, string password)
          {
              var user = await _repository.GetAsync(email);
              if(user == null)
@@ -46,6 +48,8 @@ namespace Actio.Services.Identity.Services
                  $"Invalid credentials.");
             }
 
-         }; 
+            return _jwtHandler.Create(user.Id);
+
+         }
     }
 }

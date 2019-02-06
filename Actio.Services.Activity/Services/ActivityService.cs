@@ -18,7 +18,7 @@ namespace Actio.Services.Activity.Services
             _activityRepository = activityRepository;
             _categoryRepository = categoryRepository;
         }
-        public async Task AddAsync(Guid id, string category, Guid userId, string name, string description, DateTime createdAt)
+        public async Task AddAsync(Guid id, Guid userId, string category, string name, string description, DateTime createdAt)
         {
             var activityCategory = await _categoryRepository.GetAsync(name);
             if (activityCategory == null)
@@ -26,7 +26,7 @@ namespace Actio.Services.Activity.Services
                 throw new ActioException("category_not_found",
                     $"Category:'{category} was not found.");
             }
-            var activity = new Domain.Models.Activity(id, activityCategory, userId,name,description,createdAt);
+            var activity = new Domain.Models.Activity(id, activityCategory, userId, name, description, createdAt);
             await _activityRepository.AddAsync(activity);
         }
     }

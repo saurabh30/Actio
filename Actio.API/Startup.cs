@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Actio.API.Handlers;
+using Actio.API.Repositories;
+using Actio.Common.Auth;
 using Actio.Common.Commands;
 using Actio.Common.Events;
 using Actio.Common.RabbitMq;
@@ -32,6 +34,8 @@ namespace Actio.API
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddRabbitMq(Configuration);
             services.AddTransient<IEventHandler<ActivityCreated>, ActivityCreatedHandler>();
+            services.AddTransient<IActivityRepository,ActivityRepository>();
+            services.AddJwt(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,6 +52,7 @@ namespace Actio.API
 
             app.UseHttpsRedirection();
             app.UseMvc();
+            app.UseAuthentication();
         }
     }
 }

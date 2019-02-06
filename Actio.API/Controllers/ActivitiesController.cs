@@ -1,19 +1,55 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Actio.Common.Commands;
 using RawRabbit;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Actio.API.Repositories;
+
+using System.Collections.Generic;
+using Actio.API.Models;
 
 namespace Actio.API.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize(AuthenticationSchemes =JwtBearerDefaults.AuthenticationScheme)]
     public class ActivitiesController : Controller
     {
         private readonly IBusClient _busClient;
+        private readonly IActivityRepository _activityRepository;
 
-        public ActivitiesController(IBusClient busClient)
+        public ActivitiesController(IBusClient busClient, IActivityRepository activityRepository)
         {
             _busClient = busClient;
+            _activityRepository = activityRepository;
+        }
+
+        [HttpGet("")]
+        public async Task<IActionResult> Get()
+        {
+            var activities = await _activityRepository.BrowseAsync(Guid.Parse(User.Identity.Name));
+
+            return Json(activities.Select(x => new { x.Id, x.Name, x.Category, x.CreatedAt }));
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(Guid id)
+        {
+            var activity = await _activityRepository.GetAsync(id);
+
+            if (activity == null)
+            {
+                return NotFound();
+            }
+
+            if (activity.Id != Guid.Parse(User.Identity.Name))
+            {
+                return Unauthorized();
+            }
+
+            return Json(activity);
         }
 
         [HttpPost("")]
@@ -21,7 +57,7 @@ namespace Actio.API.Controllers
         {
             command.Id = Guid.NewGuid();
             command.CreatedAt = DateTime.Now;
-
+            command.UserId = Guid.Parse(User.Identity.Name);
             await _busClient.PublishAsync(command);
 
             return Accepted($"activities/{command.Id}");
