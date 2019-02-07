@@ -14,10 +14,12 @@ namespace Actio.Services.Identity.Services
          private readonly IJwtHandler _jwtHandler;
 
          public UserService(IUserRepository repository,
-            IEncrypter encryptor)
+            IEncrypter encryptor,
+            IJwtHandler jwtHandler)
          {
             _repository = repository;
             _encryptor = encryptor;
+            _jwtHandler = jwtHandler;
          }
         
          public async Task RegisterAsync(string email, string password, string name)

@@ -9,13 +9,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{7C76
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7EA7FC58-5647-476E-8E90-C655B74477D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Actio.API", "Actio.API\Actio.API.csproj", "{7638E6D9-F399-4833-9E6B-5F105AF8183C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Actio.API", "Actio.API\Actio.API.csproj", "{7638E6D9-F399-4833-9E6B-5F105AF8183C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Actio.Services.Activity", "Actio.Services.Activity\Actio.Services.Activity.csproj", "{4A74925B-8D66-4CF5-A215-6FCD99C0B41E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Actio.Services.Activity", "Actio.Services.Activity\Actio.Services.Activity.csproj", "{4A74925B-8D66-4CF5-A215-6FCD99C0B41E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Actio.Services.Identity", "Actio.Services.Identity\Actio.Services.Identity.csproj", "{D11F4CFD-03D4-4D20-833C-68A52A0BE721}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Actio.Services.Identity", "Actio.Services.Identity\Actio.Services.Identity.csproj", "{D11F4CFD-03D4-4D20-833C-68A52A0BE721}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Actio.Common", "Actio.Common\Actio.Common.csproj", "{0DC920AC-8B2C-4E93-AF3A-6D63E29BADD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Actio.Common", "Actio.Common\Actio.Common.csproj", "{0DC920AC-8B2C-4E93-AF3A-6D63E29BADD7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Actio.API.Tests", "Actio.API.Tests\Actio.API.Tests.csproj", "{6AD69183-6363-4263-B47A-D6B8A3428E08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Actio.Services.Activities.Test", "Actio.Services.Activities.Test\Actio.Services.Activities.Test.csproj", "{D70C56CD-A6F6-4A50-83B6-8BE5F30353C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Actio.Services.Identity.Tests", "Actio.Services.Identity.Tests\Actio.Services.Identity.Tests.csproj", "{829E81E2-CB25-44DF-BF59-7B2FBE783C76}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +45,18 @@ Global
 		{0DC920AC-8B2C-4E93-AF3A-6D63E29BADD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DC920AC-8B2C-4E93-AF3A-6D63E29BADD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DC920AC-8B2C-4E93-AF3A-6D63E29BADD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AD69183-6363-4263-B47A-D6B8A3428E08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AD69183-6363-4263-B47A-D6B8A3428E08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AD69183-6363-4263-B47A-D6B8A3428E08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AD69183-6363-4263-B47A-D6B8A3428E08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D70C56CD-A6F6-4A50-83B6-8BE5F30353C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D70C56CD-A6F6-4A50-83B6-8BE5F30353C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D70C56CD-A6F6-4A50-83B6-8BE5F30353C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D70C56CD-A6F6-4A50-83B6-8BE5F30353C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{829E81E2-CB25-44DF-BF59-7B2FBE783C76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{829E81E2-CB25-44DF-BF59-7B2FBE783C76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{829E81E2-CB25-44DF-BF59-7B2FBE783C76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{829E81E2-CB25-44DF-BF59-7B2FBE783C76}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +66,9 @@ Global
 		{4A74925B-8D66-4CF5-A215-6FCD99C0B41E} = {FC785AF5-5CCB-4392-B7E7-4F03E17F798C}
 		{D11F4CFD-03D4-4D20-833C-68A52A0BE721} = {FC785AF5-5CCB-4392-B7E7-4F03E17F798C}
 		{0DC920AC-8B2C-4E93-AF3A-6D63E29BADD7} = {FC785AF5-5CCB-4392-B7E7-4F03E17F798C}
+		{6AD69183-6363-4263-B47A-D6B8A3428E08} = {7EA7FC58-5647-476E-8E90-C655B74477D8}
+		{D70C56CD-A6F6-4A50-83B6-8BE5F30353C1} = {7EA7FC58-5647-476E-8E90-C655B74477D8}
+		{829E81E2-CB25-44DF-BF59-7B2FBE783C76} = {7EA7FC58-5647-476E-8E90-C655B74477D8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {06F74894-F0B8-42AA-8F64-83E3C4738537}
