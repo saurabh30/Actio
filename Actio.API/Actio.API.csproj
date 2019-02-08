@@ -6,6 +6,10 @@
     <UserSecretsId>1628ade6-27f4-4c8d-8207-5001f566146e</UserSecretsId>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <PublishWithAspNetCoreTargetManifest>false</PublishWithAspNetCoreTargetManifest>
+  </PropertyGroup>
+  
   <ItemGroup>
     <Folder Include="wwwroot\" />
   </ItemGroup>

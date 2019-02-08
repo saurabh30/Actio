@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{FC785AF5-5CCB-4392-B7E7-4F03E17F798C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{7C76DED5-1BE2-4E08-9A1B-DFA9E7079556}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yaml = docker-compose.yaml
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7EA7FC58-5647-476E-8E90-C655B74477D8}"
 EndProject
@@ -17,11 +20,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Actio.Services.Identity", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Actio.Common", "Actio.Common\Actio.Common.csproj", "{0DC920AC-8B2C-4E93-AF3A-6D63E29BADD7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Actio.API.Tests", "Actio.API.Tests\Actio.API.Tests.csproj", "{6AD69183-6363-4263-B47A-D6B8A3428E08}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Actio.API.Tests", "Actio.API.Tests\Actio.API.Tests.csproj", "{6AD69183-6363-4263-B47A-D6B8A3428E08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Actio.Services.Activities.Test", "Actio.Services.Activities.Test\Actio.Services.Activities.Test.csproj", "{D70C56CD-A6F6-4A50-83B6-8BE5F30353C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Actio.Services.Activities.Test", "Actio.Services.Activities.Test\Actio.Services.Activities.Test.csproj", "{D70C56CD-A6F6-4A50-83B6-8BE5F30353C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Actio.Services.Identity.Tests", "Actio.Services.Identity.Tests\Actio.Services.Identity.Tests.csproj", "{829E81E2-CB25-44DF-BF59-7B2FBE783C76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Actio.Services.Identity.Tests", "Actio.Services.Identity.Tests\Actio.Services.Identity.Tests.csproj", "{829E81E2-CB25-44DF-BF59-7B2FBE783C76}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
